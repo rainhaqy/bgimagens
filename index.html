@@ -912,6 +912,118 @@
         { cat: "7. Outros", nome: "Vinagre Maçã orgânico (250ml)", preco: 28.00, ref: 250 }
     ];
 
+    // ── IMAGENS REAIS (Wikimedia Commons - sempre funcionam) ──
+    const imagensProdutos = {
+        // OLEAGINOSAS E FRUTAS SECAS
+        "Tâmara s/ caroço":              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Date_Fruit.jpg/400px-Date_Fruit.jpg",
+        "Tâmara c/ caroço":             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Dates_hanging.jpg/400px-Dates_hanging.jpg",
+        "Amêndoa sem casca":            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Almendras_2.jpg/400px-Almendras_2.jpg",
+        "Castanha caramelizada":        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Roasted_Chestnut.jpg/400px-Roasted_Chestnut.jpg",
+        "Castanha inteira":             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Brazil_nut_with_shell.jpg/400px-Brazil_nut_with_shell.jpg",
+        "Mix Nuts":                     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mixed_nuts_bunch.jpg/400px-Mixed_nuts_bunch.jpg",
+        "Amendoim torrado":             "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Arachis_hypogaea_-_Roasted_peanuts.jpg/400px-Arachis_hypogaea_-_Roasted_peanuts.jpg",
+        "Amendoim sem pele":            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Peanut_wikipedia.jpg/400px-Peanut_wikipedia.jpg",
+        "Banana chips natural":         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Banana_chips.jpg/400px-Banana_chips.jpg",
+        "Castanha de Caju":             "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Cashew_nut_-_Morumbi_SP_%281%29.jpg/400px-Cashew_nut_-_Morumbi_SP_%281%29.jpg",
+        // SEMENTES E FARINHAS
+        "Café em grãos (100g)":         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/400px-Roasted_coffee_beans.jpg",
+        "Linhaça dourada":              "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Linseed_flax_seeds.jpg/400px-Linseed_flax_seeds.jpg",
+        "Café em grãos (250g)":         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/400px-Roasted_coffee_beans.jpg",
+        "Chia":                         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Chia_seeds.jpg/400px-Chia_seeds.jpg",
+        "Mix Quinoa":                   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Tricolor_quinoa.jpg/400px-Tricolor_quinoa.jpg",
+        "Gergelim branco":              "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Sesame_seeds.jpg/400px-Sesame_seeds.jpg",
+        "Gergelim preto":               "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Black_sesame_seeds.jpg/400px-Black_sesame_seeds.jpg",
+        "Pepita de girassol crua":      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Sunflower_Seeds_Kaldari.jpg/400px-Sunflower_Seeds_Kaldari.jpg",
+        "Semente de abóbora":           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Pumpkin_seeds.jpg/400px-Pumpkin_seeds.jpg",
+        "Psyllium":                     "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Psyllium_husks.jpg/400px-Psyllium_husks.jpg",
+        "Fibra de maçã":                "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/400px-Red_Apple.jpg",
+        "Farinha de amêndoas":          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Almendras_2.jpg/400px-Almendras_2.jpg",
+        "Farinha de coco":              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Coconut-split-open.jpg/400px-Coconut-split-open.jpg",
+        "Farinha de banana verde":      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Cavendish.jpg/400px-Banana-Cavendish.jpg",
+        "Glucomannan":                  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Amorphophallus_konjac.jpg/400px-Amorphophallus_konjac.jpg",
+        "Leite de coco em pó":          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Coconut-split-open.jpg/400px-Coconut-split-open.jpg",
+        // CHÁS E ERVAS
+        "Hortelã desidratada":          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mint_Leaves_Petiole.jpg/400px-Mint_Leaves_Petiole.jpg",
+        "Sálvia folhas":                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/SalviaNov10cropped.jpg/400px-SalviaNov10cropped.jpg",
+        "Hibisco":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Hibiscus_sabdariffa_flowers.jpg/400px-Hibiscus_sabdariffa_flowers.jpg",
+        "Capim cidreira":               "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Lemon_grass.jpg/400px-Lemon_grass.jpg",
+        "Sene":                         "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Senna_obtusifolia.jpg/400px-Senna_obtusifolia.jpg",
+        "Chá preto":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Black_tea_leaves_2_%28cropped%29.jpg/400px-Black_tea_leaves_2_%28cropped%29.jpg",
+        "Folha de louro":               "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Bay_leaf.jpg/400px-Bay_leaf.jpg",
+        "Orégano":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Origanum_vulgare_-_harilik_%C3%B5lierikruid.jpg/400px-Origanum_vulgare_-_harilik_%C3%B5lierikruid.jpg",
+        "Alecrim":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Rosmarinus_officinalis_MS_9.jpg/400px-Rosmarinus_officinalis_MS_9.jpg",
+        "Chá verde":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Green_tea.jpg/400px-Green_tea.jpg",
+        "Camomila":                     "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Chamomile%40original_size.jpg/400px-Chamomile%40original_size.jpg",
+        "Cavalinha":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Equisetum_arvense.jpg/400px-Equisetum_arvense.jpg",
+        "Erva-doce":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Foeniculum_vulgare.jpg/400px-Foeniculum_vulgare.jpg",
+        "Espinheira santa":             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Maytenus_ilicifolia.jpg/400px-Maytenus_ilicifolia.jpg",
+        "Mulungu":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Erythrina_mulungu.jpg/400px-Erythrina_mulungu.jpg",
+        "Chá mate torrado":             "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Yerba_Mate_-_loose.jpg/400px-Yerba_Mate_-_loose.jpg",
+        "Picão preto":                  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bidens_pilosa.jpg/400px-Bidens_pilosa.jpg",
+        "Pata da vaca":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Bauhinia_forficata_kz1.jpg/400px-Bauhinia_forficata_kz1.jpg",
+        "Alfazema (Lavanda)":           "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Lavandula_angustifolia_002.jpg/400px-Lavandula_angustifolia_002.jpg",
+        // TEMPEROS E ESPECIARIAS
+        "Canela em pó":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Cinnamon_sticks_and_powder.jpg/400px-Cinnamon_sticks_and_powder.jpg",
+        "Canela em pau":                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Cinnamon-other.jpg/400px-Cinnamon-other.jpg",
+        "Gengibre em pó":               "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ginger-2-clean.jpg/400px-Ginger-2-clean.jpg",
+        "Páprica defumada":             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Smoked_paprika.jpg/400px-Smoked_paprika.jpg",
+        "Colorau":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Paprika-csemege.jpg/400px-Paprika-csemege.jpg",
+        "Páprica picante":              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Chili_powder.jpg/400px-Chili_powder.jpg",
+        "Páprica doce":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Paprika-csemege.jpg/400px-Paprika-csemege.jpg",
+        "Anis estrelado":               "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Star_anise.jpg/400px-Star_anise.jpg",
+        "Cravo da Índia":               "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cloves_macro_%283%29.jpg/400px-Cloves_macro_%283%29.jpg",
+        "Açafrão":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Saffron_threads_%28Kefalonia%2C_Greece%29.jpg/400px-Saffron_threads_%28Kefalonia%2C_Greece%29.jpg",
+        "Tempero do Chef":              "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/400px-A_small_cup_of_coffee.JPG",
+        "Tempero baiano":               "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Spices_in_an_Indian_market.jpg/400px-Spices_in_an_Indian_market.jpg",
+        "Alho granulado":               "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Garlic_powder.jpg/400px-Garlic_powder.jpg",
+        "Ana Maria":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Spices_in_an_Indian_market.jpg/400px-Spices_in_an_Indian_market.jpg",
+        "Edu Guedes":                   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Spices_in_an_Indian_market.jpg/400px-Spices_in_an_Indian_market.jpg",
+        "Pega Marido":                  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Spices_in_an_Indian_market.jpg/400px-Spices_in_an_Indian_market.jpg",
+        "Lemon Pepper":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Lemon-Pepper.jpg/400px-Lemon-Pepper.jpg",
+        "Chimichurri":                  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chimichurri.jpg/400px-Chimichurri.jpg",
+        "Cebola em pó":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Onion_powder.jpg/400px-Onion_powder.jpg",
+        "Salsa alho e cebola":          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Garlic-Allium-sativum.jpg/400px-Garlic-Allium-sativum.jpg",
+        "Alho em pó":                   "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Garlic_powder.jpg/400px-Garlic_powder.jpg",
+        // SUPLEMENTOS
+        "Proteína do leite (Whey)":     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Whey_protein_shake.jpg/400px-Whey_protein_shake.jpg",
+        "Colágeno em pó":               "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Collagen_powder.jpg/400px-Collagen_powder.jpg",
+        "Proteína vegetal":             "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Protein_powder.jpg/400px-Protein_powder.jpg",
+        "Cúrcuma (açafrão da terra)":   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Turmeric_Powder.jpg/400px-Turmeric_Powder.jpg",
+        "Espirulina":                   "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Spirulina_Tablets.jpg/400px-Spirulina_Tablets.jpg",
+        "Levedura nutricional":         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Nutritional_yeast.jpg/400px-Nutritional_yeast.jpg",
+        "Tribulus terrestris":          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tribulus_terrestris.jpg/400px-Tribulus_terrestris.jpg",
+        "Ginseng / Ashwagandha":        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Panax_ginseng_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-107.jpg/400px-Panax_ginseng_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-107.jpg",
+        "Maca peruana":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Lepidium_meyenii.jpg/400px-Lepidium_meyenii.jpg",
+        "Pó de moringa":                "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Moringa_oleifera_leaves.jpg/400px-Moringa_oleifera_leaves.jpg",
+        "Pó de uva":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Grape_vine.jpg/400px-Grape_vine.jpg",
+        "Pó de beterraba":              "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Beetroot_%28Beta_vulgaris%29.jpg/400px-Beetroot_%28Beta_vulgaris%29.jpg",
+        "Guaraná em pó":                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Paullinia_cupana_fruits.jpg/400px-Paullinia_cupana_fruits.jpg",
+        "Pó de batata doce":            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.jpg/400px-Ipomoea_batatas_006.jpg",
+        "Catuába":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Trichilia_catigua.jpg/400px-Trichilia_catigua.jpg",
+        "Marapuama":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Ptychopetalum_olacoides.jpg/400px-Ptychopetalum_olacoides.jpg",
+        "Feno Grego":                   "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Fenugreek_Seed.jpg/400px-Fenugreek_Seed.jpg",
+        // OUTROS
+        "Xilitol":                      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Xylitol.jpg/400px-Xylitol.jpg",
+        "Cacau em pó 100%":             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Cacao_powder.jpg/400px-Cacao_powder.jpg",
+        "Mel puro (200ml)":             "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Runny_hunny.jpg/400px-Runny_hunny.jpg",
+        "Vinagre Maçã orgânico (250ml)":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Apple_cider_vinegar.jpg/400px-Apple_cider_vinegar.jpg"
+    };
+
+    // Fallback por categoria se imagem não carregar
+    const fallbackCat = {
+        "1.": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mixed_nuts_bunch.jpg/400px-Mixed_nuts_bunch.jpg",
+        "2.": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Chia_seeds.jpg/400px-Chia_seeds.jpg",
+        "3.": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Green_tea.jpg/400px-Green_tea.jpg",
+        "4.": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Spices_in_an_Indian_market.jpg/400px-Spices_in_an_Indian_market.jpg",
+        "5.": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Turmeric_Powder.jpg/400px-Turmeric_Powder.jpg",
+        "6.": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Moringa_oleifera_leaves.jpg/400px-Moringa_oleifera_leaves.jpg",
+        "7.": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Runny_hunny.jpg/400px-Runny_hunny.jpg"
+    };
+
+    function getImagem(nome, cat) {
+        return imagensProdutos[nome] || fallbackCat[cat ? cat.substring(0,2) : "1."] || "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mixed_nuts_bunch.jpg/400px-Mixed_nuts_bunch.jpg";
+    }
+
     let carrinho = [];
 
     function init() {
@@ -951,7 +1063,7 @@
                 lastCat = p.cat;
             }
             const i = produtos.findIndex(prod => prod.nome === p.nome);
-            const imagemProduto = `produto_placeholder_${(i % 5) + 1}.png`;
+            const imagemProduto = getImagem(p.nome, p.cat);
             html += `
                 <div class="card" style="animation-delay:${(i % 8) * 0.04}s">
                     <div class="produto-img-wrapper">
